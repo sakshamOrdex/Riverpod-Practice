@@ -1,4 +1,4 @@
-# riverpod_try
+# Riverpod Practice
 
 A new Flutter project.
 
