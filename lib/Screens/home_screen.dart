@@ -46,20 +46,26 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: Text("Stream Provider")),
-      body: Consumer(builder: (context,ref,child){
-        final provider = ref.watch(stockPriceProvider);
-        return Center(
-        child: provider.when(
-          data: (price) => Text(
-            price.toStringAsFixed(2).toString(),
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          error: (error, stack) => Text(error.toString()),
-          loading: () => CircularProgressIndicator(),
-        ),
-      );
-      })
+      appBar: AppBar(
+        title: Text("Stream Provider"),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent.shade200,
+      ),
+      body: Consumer(
+        builder: (context, ref, child) {
+          final provider = ref.watch(stockPriceProvider);
+          return Center(
+            child: provider.when(
+              data: (price) => Text(
+                price.toStringAsFixed(2).toString(),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              error: (error, stack) => Text(error.toString()),
+              loading: () => CircularProgressIndicator(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
