@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:riverpod/riverpod.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod/legacy.dart';
-import 'package:riverpod_try/Screens/search_provider.dart';
+import 'package:riverpod_try/Screens/state_notifier.dart';
 
 //State Provider that can actually change the state and re-build the widget tree.
 final counter = StateProvider<int>((ref) {
